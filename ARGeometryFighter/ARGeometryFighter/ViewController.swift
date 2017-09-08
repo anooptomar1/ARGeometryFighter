@@ -117,6 +117,42 @@ class ViewController: UIViewController {
     
     //MARK: action
     
+    @IBAction func actionTap(_ sender: UITapGestureRecognizer) {
+        if game.state == .GameOver {
+            return
+        }
+        
+        if game.state == .TapToPlay {
+            game.reset()
+            game.state = .Playing
+            showSplash(splashName: "")
+            return
+        }
+        // 获取屏幕空间坐标并传递给 ARSCNView 实例的 hitTest 方法
+        let tapPoint = sender.location(in: sceneView)
+        let hitResults = sceneView.hitTest(tapPoint, options: nil)
+        
+        // 如果射线与某个平面几何体相交，就会返回该平面，以离摄像头的距离升序排序
+        // 如果命中多次，用距离最近的平面
+        if let result = hitResults.first {
+            if result.node.name == "HUD" ||
+                result.node.name == "GAMEOVER" ||
+                result.node.name == "TAPTOPLAY" {
+                return
+            } else if result.node.name == "GOOD" {
+                handleGoodCollision()
+            } else if result.node.name == "BAD" {
+                handleBadCollision()
+            }
+            
+            createExplosion(geometry: result.node.geometry!,
+                            position: result.node.presentation.position,
+                            rotation: result.node.presentation.rotation)
+            
+            result.node.removeFromParentNode()
+        }
+    }
+    
     func showSplash(splashName: String) {
         for (name,node) in splashNodes {
             if name == splashName {
