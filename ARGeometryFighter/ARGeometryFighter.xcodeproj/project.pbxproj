@@ -20,6 +20,9 @@
 		A63088BD1F62736900367A29 /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63088B41F6271C100367A29 /* Generics.swift */; };
 		A63088BE1F62736900367A29 /* Float+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63088B51F6271C100367A29 /* Float+Extensions.swift */; };
 		A63088BF1F62736900367A29 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63088B61F6271C100367A29 /* Double+Extensions.swift */; };
+		A63088C41F62B27600367A29 /* GeometryFighter.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = A63088AE1F6271A600367A29 /* GeometryFighter.scnassets */; };
+		A63088C51F62DCA000367A29 /* Explode.scnp in Resources */ = {isa = PBXBuildFile; fileRef = A63088AB1F62717600367A29 /* Explode.scnp */; };
+		A63088C61F62DCA300367A29 /* Trail.scnp in Resources */ = {isa = PBXBuildFile; fileRef = A63088AC1F62717600367A29 /* Trail.scnp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -170,8 +173,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A63088A31F623E3B00367A29 /* LaunchScreen.storyboard in Resources */,
+				A63088C51F62DCA000367A29 /* Explode.scnp in Resources */,
 				A63088A01F623E3B00367A29 /* Assets.xcassets in Resources */,
 				A630889E1F623E3B00367A29 /* Main.storyboard in Resources */,
+				A63088C61F62DCA300367A29 /* Trail.scnp in Resources */,
+				A63088C41F62B27600367A29 /* GeometryFighter.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +335,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V54RJ6G73V;
+				DEVELOPMENT_TEAM = L6U7BB57HF;
 				INFOPLIST_FILE = ARGeometryFighter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidandty.ARGeometryFighter;
@@ -344,7 +350,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V54RJ6G73V;
+				DEVELOPMENT_TEAM = L6U7BB57HF;
 				INFOPLIST_FILE = ARGeometryFighter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidandty.ARGeometryFighter;

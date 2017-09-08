@@ -83,7 +83,7 @@ class GameHelper {
     
     skScene.addChild(labelNode)
     
-    let plane = SCNPlane(width: 5, height: 1)
+    let plane = SCNPlane(width: 0.5, height: 0.1)
     let material = SCNMaterial()
     material.lightingModel = SCNMaterial.LightingModel.constant
     material.isDoubleSided = true

@@ -43,9 +43,12 @@ class ViewController: UIViewController {
         sceneView.delegate = self
         //        sceneView.showsStatistics = true
         
-        sceneView.automaticallyUpdatesLighting = true
+//        sceneView.automaticallyUpdatesLighting = true
         
-        sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
+        sceneView.autoenablesDefaultLighting = true
+        
+        sceneView.debugOptions = []
+//        sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
         
         scnScene = SCNScene()
         
@@ -80,7 +83,7 @@ class ViewController: UIViewController {
     // MARK: setup
     
     func setupHUD() {
-        game.hudNode.position = SCNVector3(x: 0.0, y: 10.0, z: 0.0)
+        game.hudNode.position = SCNVector3(x: 0.0, y: 0.35, z: 0.0)
         scnScene.rootNode.addChildNode(game.hudNode)
     }
     
@@ -93,9 +96,9 @@ class ViewController: UIViewController {
     }
     
     func createSplash(name: String, imageFileName: String) -> SCNNode {
-        let plane = SCNPlane(width: 5, height: 5)
+        let plane = SCNPlane(width: 0.5, height: 0.5)
         let splashNode = SCNNode(geometry: plane)
-        splashNode.position = SCNVector3(x: 0, y: 5, z: 0)
+        splashNode.position = SCNVector3(x: 0, y: 0.05, z: 0)
         splashNode.name = name
         splashNode.geometry?.materials.first?.diffuse.contents = imageFileName
         scnScene.rootNode.addChildNode(splashNode)
@@ -248,6 +251,7 @@ class ViewController: UIViewController {
             geometryNode.name = "GOOD"
         }
         
+        geometryNode.position = SCNVector3(x: 0, y: -3.0, z: -20.0)
         // 把正方体node添加到场景中
         scnScene.rootNode.addChildNode(geometryNode)
         
