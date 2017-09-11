@@ -83,7 +83,7 @@ class ViewController: UIViewController {
     // MARK: setup
     
     func setupHUD() {
-        game.hudNode.position = SCNVector3(x: 0.0, y: 0.35, z: 0.0)
+        game.hudNode.position = SCNVector3(x: 0.0, y: 0.35, z: -2.0)
         scnScene.rootNode.addChildNode(game.hudNode)
     }
     
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
     func createSplash(name: String, imageFileName: String) -> SCNNode {
         let plane = SCNPlane(width: 0.5, height: 0.5)
         let splashNode = SCNNode(geometry: plane)
-        splashNode.position = SCNVector3(x: 0, y: 0.05, z: 0)
+        splashNode.position = SCNVector3(x: 0, y: 0.05, z: -2)
         splashNode.name = name
         splashNode.geometry?.materials.first?.diffuse.contents = imageFileName
         scnScene.rootNode.addChildNode(splashNode)
